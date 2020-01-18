@@ -7,18 +7,50 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all 
+Item.destroy_all
 
 u1 = User.create({name: "dom"})
 u2 = User.create({name: "imade"})
+u3 = User.create({name: "ignacious pennybottom"})
 
 i1 = Item.create({
-    name: "coffee",
+    name: "artisanal ice",
     price: 5.00, 
-    picture: "https://en.wikipedia.org/wiki/Coffee#/media/File:A_small_cup_of_coffee.JPG"
+    picture: "https://img.grouponcdn.com/seocms/kkzUERq83gBf4e5f5zNhmi/Just_Ice_hero_600x390-600x390.jpeg"
 })
 
 i2 = Item.create({
-    name: 'pencil', 
-    price: 1.00, 
-    picture: "https://images-na.ssl-images-amazon.com/images/I/61TrT6dIUlL._SX425_.jpg"
+    name: 'vintage hip sachel', 
+    price: 100.00, 
+    picture: "https://images-na.ssl-images-amazon.com/images/I/61enMjomB5L._SY550_.jpg"
+})
+
+i3 = Item.create({
+    name: "mustache wax", 
+    price: 20.00,
+    picture: "https://images-na.ssl-images-amazon.com/images/I/71gam7mXv%2BL._SY355_.jpg"
+})
+
+i4 = Item.create({
+    name: "seasonal perserves recepticle",
+    price: 10.00,
+    picture: "https://target.scene7.com/is/image/Target/GUEST_6da2d695-d402-40d2-8964-f3d6fdd150b9?wid=488&hei=488&fmt=pjpeg"
+})
+
+i5 = Item.create({
+    name: "authentic puritan butter churn",
+    price: 150.00,
+    picture: "https://cdn.shopify.com/s/files/1/0050/1275/0447/products/bc-870_6097c58c-f112-4591-885a-e1e015df80f3_shopify_800x.jpg?v=1571714803"
+})
+
+i6 = Item.create({
+    name: "imported traditional japanese coffee maker",
+    price: 400.00,
+    picture: "http://www.oasiscoffeespot.com/wp-content/uploads/2018/10/KyotoDrip.png"
+})
+
+i7 = Item.create({
+    name: "turn of the century penny-farthing bicycle",
+    price: 300.00,
+    picture: "https://i.pinimg.com/originals/65/62/33/656233f4f324f769a66a7dd8b4d3b5e2.jpg"
 })
