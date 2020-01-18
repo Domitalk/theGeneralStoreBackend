@@ -5,7 +5,12 @@ class CartsController < ApplicationController
         # @white =  params.require(:user).permit(:id, :name, :updated_at, :created_at)
         # byebug
         @cart = Cart.create({User_id: cart_params["id"]})
-        render json: @cart.to_json
+        @response = {
+            cart: @cart,
+            items: Item.all
+        }
+        # byebug
+        render json: @response.to_json
     end 
 
     private 
