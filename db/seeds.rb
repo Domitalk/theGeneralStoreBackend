@@ -54,3 +54,21 @@ i7 = Item.create({
     price: 300.00,
     picture: "https://i.pinimg.com/originals/65/62/33/656233f4f324f769a66a7dd8b4d3b5e2.jpg"
 })
+
+i8 = Item.create({
+    name: "reclaimed wood coffee table",
+    price: 200.00,
+    picture: "https://i.etsystatic.com/9532249/r/il/997d84/1848990515/il_570xN.1848990515_s6fj.jpg"
+})
+
+i9 = Item.create({
+    name: "egyptian canonical sundial",
+    price: 150.00,
+    picture: "https://i.ebayimg.com/images/g/IYUAAOSwHLNZPsfU/s-l400.jpg"
+})
+
+i10 = Item.create({
+    name: "leather warrior hair wrap for the gentlemen's manbun",
+    price: 20.00,
+    picture: "https://i.etsystatic.com/12796248/r/il/dca346/1645628813/il_794xN.1645628813_kstd.jpg"
+})
