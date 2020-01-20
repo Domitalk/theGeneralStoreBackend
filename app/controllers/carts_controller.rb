@@ -1,4 +1,8 @@
 class CartsController < ApplicationController
+    def index 
+        @carts = Cart.all 
+        render json: @carts.to_json
+    end 
 
     def create 
         # byebug
