@@ -1,4 +1,6 @@
 class CartItemsController < ApplicationController
+   
+
     def create
         alreadychosen = false 
         cartid = cart_params["id"]
@@ -26,7 +28,28 @@ class CartItemsController < ApplicationController
         })
         end 
 
-        render json: @cartitem.to_json
+        # @item = Item.find(itemid)
+
+        # @sendback = {
+        #     cartitem: @cartitem,
+        #     item: @item 
+        # }
+           
+
+        # render json: CartItemsSerializer.new(@cartitem).to_serialized_json
+
+        # @thiscartitems = [] 
+        # CartItem.all.each do |ci|
+        #     if (ci.Cart_id == cartid) 
+        #         @thiscartitems << ci 
+        #     end 
+        # end 
+
+        
+        # render json: CartItemSerializer.new(@thiscartitems.options)
+        # render json: @thiscartitems.to_json
+        
+        render json: @cartitem.to_json 
 
     end 
 
