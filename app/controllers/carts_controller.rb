@@ -4,10 +4,15 @@ class CartsController < ApplicationController
         render json: @carts.to_json
     end 
 
+    def show 
+        @user = User.find(params[:id])
+        @past_carts = @user.carts 
+        render json: @past_carts.to_json
+    end 
+    
     def create 
         # byebug
         # @white =  params.require(:user).permit(:id, :name, :updated_at, :created_at)
-        # byebug
         @cart = Cart.create({User_id: cart_params["id"]})
         @response = {
             cart: @cart,
@@ -20,7 +25,7 @@ class CartsController < ApplicationController
     private 
 
     def cart_params 
-        params.require(:user).permit(:id)
+        params.permit(:id)
     end 
 
 end
