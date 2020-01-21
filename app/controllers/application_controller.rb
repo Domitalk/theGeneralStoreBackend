@@ -1,4 +1,8 @@
 class ApplicationController < ActionController::API
+    before_action :authorized 
+
+
+
     def encode_token(payload)
         JWT.encode(payload, 'asdf')
     end 
@@ -9,7 +13,7 @@ class ApplicationController < ActionController::API
 
     def decoded_token
         if auth_header 
-            token = auth_header.split(' ')[1]
+            token = auth_header
             begin
                 JWT.decode(token, 'asdf', true, algorithm: 'HS256')
             rescue JWT::DecodeError 
@@ -18,7 +22,7 @@ class ApplicationController < ActionController::API
         end 
     end 
     
-    def current_user 
+    def user_logged_in 
         if decoded_token 
             user_id = decoded_token[0]['user_id']
             @user = User.find_by(id: user_id)
@@ -26,7 +30,7 @@ class ApplicationController < ActionController::API
     end 
 
     def logged_in? 
-        !!current_user 
+        !!user_logged_in 
     end 
 
     def authorized 
