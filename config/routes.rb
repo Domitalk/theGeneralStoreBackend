@@ -8,12 +8,14 @@ Rails.application.routes.draw do
   # get '/login', to: 'users#login'
   # get '/users/:id', to 'users#show'
 
+
   namespace :api do
     namespace :v1 do
 
       # get '/users/:id', to: 'users#show'
       post '/auth', to: 'auth#create'
       post '/users', to: 'users#create'
+
     end
   end
 end
