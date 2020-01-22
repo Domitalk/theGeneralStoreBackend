@@ -9,9 +9,41 @@
 User.destroy_all 
 Item.destroy_all
 
-u1 = User.create({name: "dom"})
-u2 = User.create({name: "imade"})
-u3 = User.create({name: "ignacious pennybottom"})
+u1 = User.create({
+    name: "dom", 
+    password: "asdf", 
+    picture: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSI06q_9-ugl4CfaG_uBPOi1vYnOgVW1IFBgzKbyv3VN1LRYEiTwQ&s"
+})
+u2 = User.create({
+    name: "imade", 
+    password: "asdf", 
+    picture: "https://d2g8igdw686xgo.cloudfront.net/44306886_1577285327338940_r.jpeg"
+})
+u3 = User.create({
+    name: "ignacious pennybottom", 
+    password: "asdf", 
+    picture: "https://listverse.com/wp-content/uploads/2019/11/hipster.jpg"
+})
+u4 = User.create({
+    name: "Tristan", 
+    password: "asdf", 
+    picture: "https://media-exp1.licdn.com/dms/image/C4D03AQH6egCE2x7Baw/profile-displayphoto-shrink_200_200/0?e=1584576000&v=beta&t=Yvb3ifdmbhd06XXmrAoupa6uHoE5NWI9LV18a1p5qqo"
+})
+u5 = User.create({
+    name: "Frank",
+    password: "asdf",
+    picture: "https://www.utrgv.edu/som/surgery/_files/images/profile-pics/gerold-frank.jpg"
+})
+u6 = User.create({
+    name: "FanZhong", 
+    password: "asdf",
+    picture: "https://avatars2.githubusercontent.com/u/10819970?s=460&v=4"
+})
+
+
+
+
+
 
 i1 = Item.create({
     name: "artisanal ice",
@@ -71,4 +103,10 @@ i10 = Item.create({
     name: "leather warrior hair wrap for the gentlemen's manbun",
     price: 20.00,
     picture: "https://i.etsystatic.com/12796248/r/il/dca346/1645628813/il_794xN.1645628813_kstd.jpg"
+})
+
+i11 = Item.create({
+    name: "washroom safety floatation device",
+    price: 5.00,
+    picture: "https://images-na.ssl-images-amazon.com/images/I/51-JQx6aE6L._AC_SX425_.jpg"
 })

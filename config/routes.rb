@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   # resources :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
-  get '/login', to: 'users#login'
+  # get '/login', to: 'users#login'
   # get '/users/:id', to 'users#show'
 
   namespace :api do
