@@ -6,7 +6,7 @@ class CartsController < ApplicationController
 
     def show 
         @user = User.find(params[:id])
-        @past_carts = @user.carts 
+        @past_carts = Cart.select {|cart| cart.User_id === @user.id}
         render json: @past_carts.to_json
     end 
     
