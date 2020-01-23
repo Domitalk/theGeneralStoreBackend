@@ -25,10 +25,13 @@ class CartsController < ApplicationController
     end 
 
     def update 
+         
         @cart = Cart.find(params[:id])
         @cart.update(cart_params)
         @new_cart = Cart.create({User_id: @cart.User_id, cart_open: true})
-        render json: @new_cart.to_json 
+
+        render json: @new_cart
+
     end 
 
     private 
