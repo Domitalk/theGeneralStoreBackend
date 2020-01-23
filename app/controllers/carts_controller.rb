@@ -13,7 +13,7 @@ class CartsController < ApplicationController
     def create 
         # byebug
         # @white =  params.require(:user).permit(:id, :name, :updated_at, :created_at)
-        @cart = Cart.create({User_id: cart_params["id"], cart_open: true})
+        @cart = Cart.create({User_id: cart_params["id"]})
         
         @response = {
             cart: @cart,
@@ -28,7 +28,7 @@ class CartsController < ApplicationController
          
         @cart = Cart.find(params[:id])
         @cart.update(cart_params)
-        @new_cart = Cart.create({User_id: @cart.User_id, cart_open: true})
+        @new_cart = Cart.create({User_id: @cart.User_id})
 
         render json: @new_cart
 
