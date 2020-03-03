@@ -1,13 +1,17 @@
 class CartItemsController < ApplicationController
-   
 
+    # for items added to cart 
     def create
+        # to see if new or not 
         alreadychosen = false 
+        #pull the current cart's id
         cartid = cart_params["id"]
+        #pull the item's id 
         itemid = item_params["id"]
-        holditem = {}
 
+        #just to iterate, collect all the items already added to cart
         @allcartitems = CartItem.all 
+        # then go through and change quanitity if and only if it's in the cart already
         @allcartitems.each do |ci|
             if (ci.Cart_id == cartid) && (ci.Item_id == itemid) 
                 @cartitem = ci
@@ -16,10 +20,10 @@ class CartItemsController < ApplicationController
                     quantity: newquantity
                 )
                 alreadychosen = true 
-                
             end 
         end 
 
+        # create a new instance if it's not already in cart
         if (!alreadychosen) 
             @cartitem = CartItem.create({
             Cart_id: cart_params["id"],

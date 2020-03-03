@@ -1,6 +1,8 @@
 class Api::V1::AuthController < ApplicationController
+    # only allows for checking auth and also making a new User before log in 
     skip_before_action :authorized, only: [:create]
 
+    #create new token on login and return with JWT
     def create 
         @user = User.find_by(name: user_login_params[:name])
         if @user && @user.authenticate(user_login_params[:password])
